@@ -20,16 +20,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item" style="padding: 15px">
-            <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
+            <a class="nav-link active" href="../dashboard/userDashboard.html">Home</a>
           </li>
           <li class="nav-item" style="padding: 15px">
-            <a class="nav-link active" href="viewCart.html">My Cart</a>
+            <a class="nav-link active" href="../Cart/viewCart.html">My Cart</a>
           </li>
           <li class="nav-item" style="padding: 15px">
-            <a class="nav-link active" href="AboutUs.html">About Us</a>
-          </li>
-          <li class="nav-item" style="padding: 15px">
-            <a class="nav-link active" href="BuyerChat.html">Contact Us</a>
+            <a class="nav-link active" href="../user/aboutUs.html">About Us</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -67,10 +64,10 @@
         </thead>
         <tbody th:each="cart:${carts}">
         <tr>
-          <td th:text="${cart.item.itemName}">Pizza</td>
-          <td th:text="${cart.item.itemPrice}">$10.99</td>
+          <td th:text="${cart.item.itemName}">Fender</td>
+          <td th:text="${cart.item.itemPrice}">$1987</td>
           <td th:text="${cart.cartQty}">2</td>
-          <td th:text="${cart.totalPrice}">$21.98</td>
+          <td th:text="${cart.totalPrice}">$2548</td>
           <td>
             <div class="row">
               <div class="col-2">
@@ -165,8 +162,7 @@
       <div class="footer-col">
         <h4>company</h4>
         <ul>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">our services</a></li>
+          <li><a href="../user/aboutUs.html">about us</a></li>
           <li><a href="#">terms and condition</a></li>
         </ul>
       </div>
@@ -183,8 +179,9 @@
       <div class="footer-col">
         <h4>online shop</h4>
         <ul>
-          <li><a href="#">shoes</a></li>
-          <li><a href="#">dress</a></li>
+          <li><a href="#">Electronic Guitar</a></li>
+          <li><a href="#">Acuostic Guitar</a></li>
+          <li><a href="#">Semi-Acuostic Guitar</a></li>
         </ul>
       </div>
       <div class="footer-col">

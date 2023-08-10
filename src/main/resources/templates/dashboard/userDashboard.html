@@ -22,7 +22,7 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            /*padding: 10px 20px;*/
         }
 
         .welcome-section {
@@ -101,28 +101,30 @@
 <header class="sticky-top" th:if="${user.role=='User'}">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> <img src="../../static/img/logo.jpg" alt="logo" style="height: 80px;width: 80px"></a>
+            <a class="navbar-brand" href="#"> <img src="../../static/img/logo.jpg" th:src="@{img/logo.jpg}"alt="logo" style="height: 80px;width: 80px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item" style="padding: 15px">
-                        <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/dashboard}">Home</a>
                     </li>
                     <li class="nav-item" style="padding: 15px">
-                        <a class="nav-link active" href="viewCart.html">My Cart</a>
+                        <a class="nav-link active" th:href="@{/dashboard/menu}">Guitars</a>
                     </li>
                     <li class="nav-item" style="padding: 15px">
-                        <a class="nav-link active" href="AboutUs.html">About Us</a>
+                        <a class="nav-link active" th:href="@{/cart/list}">My Cart</a>
                     </li>
+
                     <li class="nav-item" style="padding: 15px">
-                        <a class="nav-link active" href="BuyerChat.html">Contact Us</a>
+                        <a class="nav-link active" th:href="@{/dashboard/about}">About Us</a>
                     </li>
+
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item dropdown" style="padding-left: 20px">
+                    <li class="nav-item dropdown" >
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/user/profile">View Profile</a></li>
@@ -141,7 +143,7 @@
 <main>
     <div class="container-fluid">
         <div class="welcome-section">
-            <h1>Welcome, <span th:text="${user.firstName}+' '+${user.lastName}">Crystal</span></h1>
+            <h1>Welcome, <span th:text="${user.firstName}+' '+${user.lastName}">Abhigya</span></h1>
         </div>
 
         <!-- Chart container with both charts side by side -->
@@ -157,23 +159,7 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-8">
-                <div class="about-us-section mx-auto">
-                    <h2>About Us</h2>
-                    <p>Discover a convenient online food ordering experience that puts you in control:</p>
-                    <ul>
-                        <li>Explore a diverse menu selection with delectable dishes.</li>
-                        <li>Add items to your cart effortlessly and customize your orders.</li>
-                        <li>Access your order history to track past orders and preferences.</li>
-                        <li>Enjoy a secure checkout process for a worry-free experience.</li>
-                    </ul>
-                    <p>We are committed to delivering an exceptional dining journey, harnessing technology for your satisfaction.</p>
-                </div>
-            </div>
-        </div>
-        
+
     </div>
 </main>
 

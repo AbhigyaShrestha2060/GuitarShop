@@ -76,7 +76,7 @@ public class SpringSecurityConfig {
                     return;
                 }
             }
-            response.sendRedirect("/dashboard/");
+            response.sendRedirect("/dashboard");
         }
     }
 

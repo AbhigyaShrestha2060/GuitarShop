@@ -13,11 +13,7 @@ public interface ItemRepo extends JpaRepository<Item, Integer> {
 
     @Query(value="select * from items where item_id = ?1", nativeQuery = true)
     Optional<Item> findByIdNoOpt(int id);
-
-
         // Other methods...
-
-
     @Query(value="select item_image from items", nativeQuery = true)
    List<String> findAllImages();
 

@@ -36,7 +36,7 @@ public class DashboardController {
     private final BillService  billService;
     private final UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String dashboard(Model model){
         List<Bill>  bills=billService.getBillForTenDays();
         int[] barData=generateBarData(bills);
@@ -54,6 +54,13 @@ public class DashboardController {
         List<String> dateLabels = generateDateLabels();
         model.addAttribute("dateLabels", dateLabels);
         return "dashboard/userDashboard";
+    }
+    @GetMapping("/about")
+    public String about(Model model){
+        User activeUser = userService.getActiveUser().get();
+        model.addAttribute("user",activeUser);
+        return "user/aboutUs";
+
     }
 
 
